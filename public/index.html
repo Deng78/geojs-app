@@ -50,34 +50,41 @@
         </nav>
     </header>
 
-    <main class="Site-content">
-        <div class="container px-2 welcome">
-            <div class="col-lg-12 text-center">
-                <h1>Hello <span id="user_ip"></span>!</h1>
-                <p>Enter an IP below to lookup its information</p>
-                <p><noscript><b>Hey, looks like you've got JavaScript disabled. None of this will work like that
-                            sadly!</b></noscript></p>
+    <main>
+
+        <div class="container">
+            <div class="columns is-centered is-gapless px-1 py-2">
+              <div class="column is-8">
+                <div class="page-titles pb-1">
+                  <h1 class="title">Hello <span id="user_ip"></span>!</h1>
+                  <h2 class="subtitle">Enter an IP below to lookup its information</h2>
+                  <p><noscript><b>Hey, looks like you've got JavaScript disabled. None of this will work like that
+                    sadly!</b></noscript></p>
+                </div>
+              </div>
             </div>
         </div>
-        <div class="container align-items-center lookup-form">
-            <div class="row justify-content-lg-center">
-                <div class="col-lg-8">
-                    <form id="ip-lookup">
-                        <label class="sr-only" for="inlineFormInput">IP Address</label>
-                        <div class="input-group input-group-lg">
-                            <input type="text" class="form-control input-lg" name="ip" id="lookup"
-                                placeholder="IP Address" required>
-                            <div class="invalid-feedback order-last">
-                                Please provide a valid IP
+
+        <div class="container">
+            <div class="columns is-centered is-gapless">
+                <div class="column is-8">
+                    <div class="px-1">
+                        <form class="pb-2" id="ip-lookup">
+                            <div class="field has-addons">
+                                <div class="control" style="width: 100%;">
+                                    <!-- <label class="label" for="name">IP Address</label> -->
+                                    <input type="text" class="input" id="lookup" placeholder="IP Address" name="ip">
+                                </div>
+                                <div class="control">
+                                    <button type="submit" class="button is-primary">Submit</button>
+                                </div>
                             </div>
-                            <span class="input-group-append">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </span>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
+
         <div class="container">
             <div class="row justify-content-lg-center">
                 <div class="col-lg-10">
