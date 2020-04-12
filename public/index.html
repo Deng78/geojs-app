@@ -11,34 +11,52 @@
 </head>
 
 <body class="Site">
-    <main class="Site-content">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-faded">
-            <a class="navbar-brand" href="/">GeoJS</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://geojs.io/docs/">Docs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://geojs.io/#demo">Demo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://jloh.co/tag/geojs/">Blog</a>
-                    </li>
-                </ul><span class="navbar-text">REST/JSON/JSONP IP Interface for Geo Lookups</span>
+    <header>
+        <nav class="navbar has-shadow is-spaced" role="navigation" aria-label="main navigation">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="https://www.geojs.io">
+                        <img alt="GeoJS" src="https://www.geojs.io/img/logo.png">
+                    </a>
+                    <div class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="topmenu-nav">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="navbar-menu" id="topmenu-nav">
+                    <div class="navbar-start">
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link" title="Docs" href="https://geojs.io/docs/">Docs</a>
+                            <div class="navbar-dropdown">
+                                <a class="navbar-item" title="General" href="https://geojs.io/docs/general/">General</a>
+                                <a class="navbar-item" title="ChatOps" href="https://geojs.io/docs/v1/chatops/">ChatOps</a>
+                                <a class="navbar-item" title="Endpoints" href="https://geojs.io/docs/v1/endpoints/">Endpoints</a>
+                            </div>
+                        </div>
+                        <a class="navbar-item" title="Blog" href="https://jloh.co/tag/geojs/">Blog</a>
+                        <a class="navbar-item is-active" title="App" href="https://app.geojs.io/">App</a>
+                        <a class="navbar-item" title="Contact" href="https://www.geojs.io/contact/">Contact</a>
+                        <a class="navbar-item" title="Open" href="https://www.geojs.io/open/">Open</a>
+                        <a class="navbar-item" title="Status" href="https://status.geojs.io/">Status</a>
+                    </div>
+                    <div class="navbar-end">
+                        <div class="navbar-item">
+                            <p class="navbar-text navbar-right">REST/JSON/JSONP IP Interface for Geo Lookups</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </nav>
+    </header>
+
+    <main class="Site-content">
         <div class="container px-2 welcome">
             <div class="col-lg-12 text-center">
                 <h1>Hello <span id="user_ip"></span>!</h1>
                 <p>Enter an IP below to lookup its information</p>
-                <p><noscript><b>Hey, looks like you've got JavaScript disabled. None of this will work like that sadly!</b></noscript></p>
+                <p><noscript><b>Hey, looks like you've got JavaScript disabled. None of this will work like that
+                            sadly!</b></noscript></p>
             </div>
         </div>
         <div class="container align-items-center lookup-form">
@@ -47,9 +65,10 @@
                     <form id="ip-lookup">
                         <label class="sr-only" for="inlineFormInput">IP Address</label>
                         <div class="input-group input-group-lg">
-                            <input type="text" class="form-control input-lg" name="ip" id="lookup" placeholder="IP Address" required>
+                            <input type="text" class="form-control input-lg" name="ip" id="lookup"
+                                placeholder="IP Address" required>
                             <div class="invalid-feedback order-last">
-                                    Please provide a valid IP
+                                Please provide a valid IP
                             </div>
                             <span class="input-group-append">
                                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -109,48 +128,76 @@
             </div>
         </div>
     </main>
+
     <footer class="footer mt-2">
         <div class="container">
-          <div class="has-text-centered pb-2">
-            <div>
-              <svg class="svg-inline--fa fa-envelope fa-w-16 fa-2x" aria-hidden="true" data-prefix="far" data-icon="envelope" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
-                <path fill="currentColor" d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"></path>
-              </svg>
-            </div>
-            <p class="title is-5">GeoJS Newsletter</p>
-            <p class="subtitle">Product updates, releases &amp; announcements. No spam.</p>
-            <form action="https://geojs.us14.list-manage.com/subscribe/post?u=9c6287d73fb594aeb6a7a28ac&amp;id=02218ac43f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="empty-action input-group input-inline" target="_blank" novalidate="">
-              <div id="mc-success-message" class="field has-addons has-addons-centered is-sr-only is-4">
-                <div class="subtitle">One more step before you're added. Check your email for a confirmation link.</div>
-              </div>
-              <div id="mc-form" class="field has-addons has-addons-centered">
-                <div id="mc-input" class="control has-icons-left new-subscription">
-                  <input type="email" value="" name="EMAIL" id="mce-EMAIL" placeholder="email address" class="input" required="">
-                  <span class="icon is-small is-left">
-                    <svg class="svg-inline--fa fa-envelope fa-w-16" aria-hidden="true" data-prefix="fas" data-icon="envelope" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
-                      <path fill="currentColor" d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path>
+            <div class="has-text-centered pb-2">
+                <div>
+                    <svg class="svg-inline--fa fa-envelope fa-w-16 fa-2x" aria-hidden="true" data-prefix="far"
+                        data-icon="envelope" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                        data-fa-i2svg="">
+                        <path fill="currentColor"
+                            d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z">
+                        </path>
                     </svg>
-                  </span>
                 </div>
-                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_9c6287d73fb594aeb6a7a28ac_02218ac43f" tabindex="-1" value=""></div>
-                <div class="control" id="email-button">
-                  <button id="mc-button" class="button is-info" type="submit">Subscribe</button>
+                <p class="title is-5">GeoJS Newsletter</p>
+                <p class="subtitle">Product updates, releases &amp; announcements. No spam.</p>
+                <form
+                    action="https://geojs.us14.list-manage.com/subscribe/post?u=9c6287d73fb594aeb6a7a28ac&amp;id=02218ac43f"
+                    method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+                    class="empty-action input-group input-inline" target="_blank" novalidate="">
+                    <div id="mc-success-message" class="field has-addons has-addons-centered is-sr-only is-4">
+                        <div class="subtitle">One more step before you're added. Check your email for a confirmation
+                            link.</div>
+                    </div>
+                    <div id="mc-form" class="field has-addons has-addons-centered">
+                        <div id="mc-input" class="control has-icons-left new-subscription">
+                            <input type="email" value="" name="EMAIL" id="mce-EMAIL" placeholder="email address"
+                                class="input" required="">
+                            <span class="icon is-small is-left">
+                                <svg class="svg-inline--fa fa-envelope fa-w-16" aria-hidden="true" data-prefix="fas"
+                                    data-icon="envelope" role="img" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 512 512" data-fa-i2svg="">
+                                    <path fill="currentColor"
+                                        d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z">
+                                    </path>
+                                </svg>
+                            </span>
+                        </div>
+                        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+                                name="b_9c6287d73fb594aeb6a7a28ac_02218ac43f" tabindex="-1" value=""></div>
+                        <div class="control" id="email-button">
+                            <button id="mc-button" class="button is-info" type="submit">Subscribe</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="columns is-one-third is-centered-touch">
+                <div class="column is-pulled-left-desktop has-text-centered-touch">
+                    GeoJS is made with <svg class="svg-inline--fa fa-heart fa-w-16" aria-hidden="true" data-prefix="fas"
+                        data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                        data-fa-i2svg="">
+                        <path fill="currentColor"
+                            d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z">
+                        </path>
+                    </svg> by <a href="https://jloh.co" title="jloh">jloh</a><br> Sponsored by <a
+                        href="https://m.do.co/c/2c9ab4daaa8d" title="Digital Ocean">Digital Ocean</a>, <a
+                        href="https://www.cloudflare.com/">Cloudflare</a> &amp; <a href="https://dnsspy.io/"
+                        title="DNS Spy">DNS Spy</a>
                 </div>
-              </div>
-            </form>
-          </div>
-          <div class="columns is-one-third is-centered-touch">
-            <div class="column is-pulled-left-desktop has-text-centered-touch">
-              GeoJS is made with <svg class="svg-inline--fa fa-heart fa-w-16" aria-hidden="true" data-prefix="fas" data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""> <path fill="currentColor" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path></svg> by <a href="https://jloh.co" title="jloh">jloh</a><br> Sponsored by <a href="https://m.do.co/c/2c9ab4daaa8d" title="Digital Ocean">Digital Ocean</a>, <a href="https://www.cloudflare.com/">Cloudflare</a> &amp; <a href="https://dnsspy.io/" title="DNS Spy">DNS Spy</a>
+                <div class="column has-text-centered">
+                    <a href="/tos/" title="Terms of Service">Terms of Service</a> / <a href="/privacy/"
+                        title="Privacy Policy">Privacy Policy</a>
+                </div>
+                <div class="column is-pulled-right-desktop has-text-right-desktop has-text-centered-touch">
+                    Built with <a href="https://gohugo.io/" title="Hugo">Hugo</a>, <a href="https://bulma.io/"
+                        title="Bulma CSS Framework">Bulma</a> &amp; <a href="https://www.netlify.com/"
+                        ttiel="Netlify">Netlify</a>
+                </div>
             </div>
-            <div class="column has-text-centered">
-              <a href="/tos/" title="Terms of Service">Terms of Service</a> / <a href="/privacy/" title="Privacy Policy">Privacy Policy</a>
-            </div>
-            <div class="column is-pulled-right-desktop has-text-right-desktop has-text-centered-touch">
-              Built with <a href="https://gohugo.io/" title="Hugo">Hugo</a>, <a href="https://bulma.io/" title="Bulma CSS Framework">Bulma</a> &amp; <a href="https://www.netlify.com/" ttiel="Netlify">Netlify</a>
-            </div>
-          </div>
-      </div></footer>
+        </div>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha256-gL1ibrbVcRIHKlCO5OXOPC/lZz/gpdApgQAzskqqXp8=" crossorigin="anonymous"></script>
